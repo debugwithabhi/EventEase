@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-style.css"  />
+
+    <!-- Bootstrap icons-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+ <!-- Bootstrap CSS -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+ 
+ <!-- Bootstrap JS (for toggle functionality) -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ 
+ <!-- Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <main>
+        <header class="py-2">
+            <div class="container">
+                <div class="row align-items-center justify-content-between">
+                    <!-- Logo Section -->
+                    <div class="logo col-12 col-md-4 d-flex align-items-center justify-content-center justify-content-md-start mb-2 mb-md-0">
+                        <i class="bi bi-calendar-check fs-2 me-2" style="color:black;text-shadow:1px 1px 2px rgba(0, 0, 0, 0.5);"></i>
+                        <h1 class="mb-0 d-inline">Event<span style="color:black;text-shadow:1px 1px 2px rgba(0, 0, 0, 0.5);">Ease</span></h1>
+                    </div>
+        
+                    <div class="profile-info col-12 col-md-4 d-flex align-items-center justify-content-center justify-content-md-end mb-2 mb-md-0">
+                        <img src="profile-img.webp" alt="Profile" class="rounded-circle me-2" width="50" height="50" />
+                        
+                        <div class="dropdown">
+                            <a class="dropdown-toggle d-flex align-items-center text-decoration-none" href="#" role="button" id="profileDropdown" data-bs-toggle="dropdown">
+                                <span class="username me-1">Abhishek Lalzare</span>
+                            </a>
+                            
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right me-2"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </main>
+    
+    <div class="column-container">
+      <div class="menu-toggle d-lg-none"><i class="bi bi-list"></i></div>
+      <div class="column left" id="leftSidebar">
+        <div class="navigation-btn">
+          <button><i class="bi bi-house-fill"></i> Dashboard</button>
+          <button><i class="bi bi-calendar-plus-fill"></i> Events</button>
+          <button><i class="bi bi-person-fill-check"></i> Attendees</button>
+          <button><i class="bi bi-person-fill-gear"></i>Account Settings</button>
+        </div>
+      </div>
+      
+      <div class="column middle">
+        <div class="heading"><h2>Dashboard</h2></div>
+        
+       
+        <div class="row g-3 p-3">
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card  p-1">
+              <h4>Total Events</h4>
+              <span >120</span>
+              <div class="mt-2">
+                <i class="bi bi-person-fill me-2"></i>1,20,000
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card  p-1">
+              <h4>Active Events</h4>
+              <span >120</span>
+              <div class="mt-2">
+                <i class="bi bi-person-plus-fill me-2"></i>1,20,000
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card p-1">
+              <h4>Last Event</h4>
+              <span">120</span>
+              <div class="mt-2">
+                <i class="bi bi-person-fill me-2"></i>1,20,000
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card p-3 w-100">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h5 mb-0">Event-wise Registration Count</h3>
+            <div class="btn-group btn-group-sm">
+              <button class="btn btn-outline-secondary active" data-chart-type="bar">Bar</button>
+              <button class="btn btn-outline-secondary" data-chart-type="pie">Pie</button>
+            </div>
+          </div>
+          
+          <div class="chart-container" style="position: relative; height: 400px; width: 100%">
+            <canvas id="registrationsChart"></canvas>
+          </div>
+          
+          <p class="text-muted mt-2 mb-0">
+            <i class="bi bi-info-circle"></i> Compare registration numbers across events
+          </p>
+        </div>
+
+        <div class="row g-3 mb-4 p-4">
+          <div class="row g-3 mb-4">
+            <div class="col-12 col-lg-4">
+              <div class="card p-3 h-100">
+                <div class="mb-3">
+                  <h3 class="h5 mb-2">Seat Occupancy</h3>
+                  <select class="form-select form-select-sm" id="eventSelect1">
+                    <option>All Events</option>
+                    <option>Tech Conference</option>
+                    <option>Product Launch</option>
+                  </select>
+                </div>
+                
+                <div class="text-center">
+                  <div class="position-relative" style="height: 200px; width: 200px; margin: 0 auto;">
+                    <canvas id="seatsChart"></canvas>
+                    <div class="position-absolute top-50 start-50 translate-middle">
+                      <span class="fs-4" id="seatsPercent">75%</span>
+                      <div class="text-muted small">Filled</div>
+                    </div>
+                  </div>
+                  <div class="mt-3">
+                    <span class="badge bg-success me-2">120 Filled</span>
+                    <span class="badge bg-secondary">40 Available</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+
+            <div class="col-12 col-lg-4">
+              <div class="card p-3 h-100">
+                <div class="mb-3">
+                  <h3 class="h5 mb-2">Upcoming Events</h3>
+                  <select class="form-select form-select-sm" id="eventSelect2">
+                    <option>Next 7 Days</option>
+                    <option>Next 30 Days</option>
+                  </select>
+                </div>
+                
+
+                <div style="max-height: 300px; overflow-y: auto;">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Tech Conference
+                      <span class="badge bg-primary rounded-pill">May 15</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Workshop
+                      <span class="badge bg-primary rounded-pill">May 18</span>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          
+
+            <div class="col-12 col-lg-4">
+              <div class="card p-3 h-100">
+
+                <div class="mb-3">
+                  <h3 class="h5 mb-2">Sales & Revenue</h3>
+                  <select class="form-select form-select-sm" id="eventSelect3">
+                    <option>Last 7 Days</option>
+                    <option>Last 30 Days</option>
+                  </select>
+                </div>
+                
+
+                <div class="text-center mb-3">
+                  <span style="font-size:30px;">₹1,20,000</span>
+                  <div class="text-success small">+12% from last week</div>
+                </div>
+                <div style="height: 200px;">
+                  <canvas id="salesChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="column right">
+        <div class="card h-100">
+          <div class="card-header" style="background-color:#ceb36a;color:black;">
+            <h5 class="mb-0">Live Updates</h5>
+          </div>
+          <div class="card-body p-0 position-relative" style="overflow: hidden;">
+            <div class="notification-scroll" style="height: 100%; overflow: hidden;">
+              <div class="notification-content" style="position: absolute; width: 100%;">
+                <div class="p-3 border-bottom">
+                  <div class="d-flex">
+                    <span class="badge bg-success me-2">NEW</span>
+                    <small class="text-muted">2 min ago</small>
+                  </div>
+                  <div>John Doe registered for Tech Conference</div>
+                </div>
+                
+                <div class="p-3 border-bottom">
+                  <div class="d-flex">
+                    <span class="badge bg-info me-2">PAYMENT</span>
+                    <small class="text-muted">15 min ago</small>
+                  </div>
+                  <div>Sarah Smith paid ₹2,500 for Workshop</div>
+                </div>
+                
+                <div class="p-3 border-bottom">
+                  <div class="d-flex">
+                    <span class="badge bg-warning me-2">ATTENDED</span>
+                    <small class="text-muted">1 hour ago</small>
+                  </div>
+                  <div>Michael Chen checked into Product Launch</div>
+                </div>
+                
+                <!-- Add more notifications as needed -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    <footer>
+      <p class="text-center">&copy 2025 EventEase. All rights reserved.</p>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const leftSidebar = document.getElementById('leftSidebar');
+  
+
+  if (menuToggle && leftSidebar) {
+
+    function toggleMenu() {
+      leftSidebar.classList.toggle('active');
+      
+      if (leftSidebar.classList.contains('active')) {
+        document.addEventListener('click', closeMenuOnClickOutside);
+      } else {
+        document.removeEventListener('click', closeMenuOnClickOutside);
+      }
+    }
+
+    function closeMenuOnClickOutside(e) {
+      if (!leftSidebar.contains(e.target) && e.target !== menuToggle && !menuToggle.contains(e.target)) {
+        leftSidebar.classList.remove('active');
+        document.removeEventListener('click', closeMenuOnClickOutside);
+      }
+    }
+
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation(); 
+      toggleMenu();
+    });
+  }
+});
+
+</script>
+<!-- Chart javascript links -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="chart.js"></script>
+<script src="dashboard-updates.js"></script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+    font-family: "Roboto Slab", serif;
+}
+header {
+    width: 100%;
+    background-color: #ceb36a;
+    display: flex;
+    padding: 10px 20px;
+    position: sticky;
+    top:0;
+    z-index:999;
+  }
+
+  .logo h1 {
+    color:#fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2.0);
+    font-family: "Roboto Slab", serif;
+  }
+
+  .dropdown span{
+    font-size: 1.2rem;
+    font-weight:bold;
+    font-family: "Roboto Slab", serif;
+    color: #000;
+  }
+
+  .dropdown-toggle{
+    color:#000;
+  }
+   /* Custom dropdown styles */
+/* Force override Bootstrap defaults */
+.profile-info .dropdown-menu {
+    border: 1px solid #cac8ce !important; 
+  }
+  
+  .profile-info .dropdown-item:hover {
+    background-color: #efecf3 !important;
+  }
+  
+  .profile-info .dropdown-item:active {
+    background-color: #cac8ce !important;
+    color: black !important;
+  }
+
+  .column-container {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+}
+  
+.column {
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.left, .right {
+    flex: 0 0 250px;
+}
+
+.navigation-btn i {
+    margin-right: 5px;
+}
+
+.navigation-btn {
+    margin-top: 5rem;
+}
+
+.navigation-btn button {
+    display: flex;
+    width: 190px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 20px 0;
+    border: none;
+    background-color: hsl(0, 13%, 82%);
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Roboto Slab", serif;
+    transition: background-color 0.5s ease;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.middle {
+    flex: 1;
+    min-width: 300px; /* Prevent middle column from getting too narrow */
+    background: #e0e0e0;
+}
+
+.navigation-btn button:active {
+    background-color: #ceb36a;
+}
+
+.heading {
+    font-family: "Roboto Slab", serif;
+    margin: 20px 5px;
+}
+
+.boards {
+    display: flex;
+    gap: 20px;
+    font-family: "Roboto Slab", serif;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    justify-content: center; /* Center cards when they wrap */
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    background-color: grey;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 1px 1px 1px grey;
+    flex-grow: 1; /* Allow cards to grow if needed */
+    max-width: 100%; /* Prevent cards from overflowing */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .right {
+        display: none; /* Hide right column on medium screens */
+    }
+    
+    .left {
+        flex: 0 0 200px; /* Slightly reduce left column width */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .column-container {
+        flex-direction: column; /* Stack columns vertically */
+    }
+    
+    .left, .middle, .right {
+        flex: 1 1 100%; /* Full width for all columns */
+    }
+    
+    .navigation-btn {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .navigation-btn button {
+        margin: 5px;
+        width: 160px; /* Smaller buttons on mobile */
+    }
+    
+    .card {
+        height: auto; /* Flexible card height */
+        min-height: 200px; /* Minimum card height */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navigation-btn button {
+        width: 100%; /* Full width buttons on very small screens */
+    }
+    
+    .card {
+        width: 100%; /* Full width cards */
+    }
+}.column-container {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+}
+  
+.column {
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.left, .right {
+    flex: 0 0 250px;
+}
+
+.navigation-btn i {
+    margin-right: 5px;
+}
+
+.navigation-btn {
+    margin-top: 5rem;
+}
+
+.navigation-btn button {
+    display: flex;
+    width: 190px;
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 20px 0;
+    border: none;
+    background-color: hsl(0, 13%, 82%);
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Roboto Slab", serif;
+    transition: background-color transform 0.5s ease;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.middle {
+    flex: 1;
+    min-width: 300px; /* Prevent middle column from getting too narrow */
+    background: #e0e0e0;
+}
+
+.navigation-btn button:active {
+    background-color: #ceb36a;
+}
+.navigation-btn button:hover{
+    transform:scale(1.1);
+}
+.heading {
+    font-family: "Roboto Slab", serif;
+    margin: 20px 5px;
+}
+
+.boards {
+    display: flex;
+    gap: 20px;
+    font-family: "Roboto Slab", serif;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    justify-content: center; /* Center cards when they wrap */
+}
+
+.card {
+    width: 300px;
+    height: auto;
+    background-color: grey;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 1px 1px 1px grey;
+    flex-grow: 1; /* Allow cards to grow if needed */
+    max-width: 100%; /* Prevent cards from overflowing */
+}
+.menu-toggle {
+    display: flex;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    font-size: 24px;
+    background: #8b7740;
+    border: none;
+    padding:2px 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    .right {
+        display: none; /* Hide right column on medium screens */
+    }
+    
+    .left {
+        flex: 0 0 200px; /* Slightly reduce left column width */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .column-container {
+        flex-direction: column; /* Stack columns vertically */
+    }
+    
+    .left, .middle, .right {
+        flex: 1 1 100%; /* Full width for all columns */
+    }
+    
+    .navigation-btn {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .navigation-btn button {
+        margin: 5px;
+        width: 160px; /* Smaller buttons on mobile */
+    }
+    
+    .card {
+        height: auto; /* Flexible card height */
+        min-height: 200px; /* Minimum card height */
+    }
+    .menu-toggle {
+        display: block;
+      }
+      
+      .left {
+        position: fixed;
+        left: -250px;
+        top: 0;
+        height: 100vh;
+        width: 250px;
+        background: white;
+        z-index: 999;
+        transition: left 0.3s ease;
+        padding-top: 60px;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      }
+      
+      .left.active {
+        left: 0;
+      }
+      
+      .column-container {
+        padding-left: 0;
+      }
+      
+      .middle {
+        margin-left: 0;
+        width: 100%;
+      }
+      
+      .navigation-btn {
+        margin-top: 1rem;
+      }
+      
+      .navigation-btn button {
+        width: 100%;
+        margin: 10px 0;
+      }
+}
+.notification-content {
+    animation: scrollUp 20s linear infinite;
+  }
+
+.column{
+    font-family: "Roboto Slab", serif;
+}
+footer{
+    font-family: "Roboto Slab", serif;
+    color: rgb(85, 82, 82);
+}
+.left .card  , .middle .card{
+    transition: transform 0.3s;
+    transform-style: preserve-3d; /* Enables 3D space */
+  }
+  
+ .left .card:hover, .middle .card:hover {
+    transform: scale(1.04); /* Scales X and Y */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  
+  @keyframes scrollUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+  }
+  
+  .notification-content:hover {
+    animation-play-state: paused;
+  }
+@media screen and (max-width: 480px) {
+    .navigation-btn button {
+        width: 100%; /* Full width buttons on very small screens */
+    }
+    
+    .card {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+}
